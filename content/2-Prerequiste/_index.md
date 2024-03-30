@@ -13,4 +13,4 @@ In this article, we will proceed to install Terraform and deploy a Web Server us
 #### Content
 - [Installing Terraform](2.1-terraform-install/)
 - [Deloy Web Server](2.2-deloyws/)
-
+- [ADD AWS Profile](2.3-profile/)

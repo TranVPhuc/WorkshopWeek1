@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Firewall in VPC :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
+    <title>Security Group and Network Interface :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
     
-    <link href="/css/nucleus.css?1711531194" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711531194" rel="stylesheet">
-    <link href="/css/hybrid.css?1711531194" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711531194" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711531194" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711531194" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711531194" rel="stylesheet">
-    <link href="/css/theme.css?1711531194" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711531194" rel="stylesheet">
+    <link href="/css/nucleus.css?1711829179" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711829179" rel="stylesheet">
+    <link href="/css/hybrid.css?1711829179" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711829179" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711829179" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711829179" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711829179" rel="stylesheet">
+    <link href="/css/theme.css?1711829179" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711829179" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711531194" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1711829179" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711531194"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711829179"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711531194"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711531194"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711829179"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711829179"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711531194"></script>
+<script type="text/javascript" src="/js/search.js?1711829179"></script>
 
     
   </div>
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.1-workflow/" title="Subnets" class="dd-item 
+    <li data-nav-id="/1-introduce/1.1-workflow/" title="Workflow" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.1-workflow/">
-           <b> 1.1 </b> Subnets
+           <b> 1.1 </b> Workflow
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.2-provider/" title="Route Table" class="dd-item 
+    <li data-nav-id="/1-introduce/1.2-provider/" title="Terraform Provider" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.2-provider/">
-           <b> 1.2 </b> Route Table
+           <b> 1.2 </b> Terraform Provider
           
             <i class="fas fa-check read-icon"></i>
           
@@ -169,13 +169,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.3-resource/" title="Internet Gateway" class="dd-item 
+    <li data-nav-id="/1-introduce/1.3-resource/" title="Terraform Resource" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.3-resource/">
-           <b> 1.3 </b> Internet Gateway
+           <b> 1.3 </b> Terraform Resource
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.4-module/" title="NAT Gateway" class="dd-item 
+    <li data-nav-id="/1-introduce/1.4-module/" title="Terraform Module" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.4-module/">
-           <b> 1.4 </b> NAT Gateway
+           <b> 1.4 </b> Terraform Module
           
             <i class="fas fa-check read-icon"></i>
           
@@ -225,13 +225,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.5-state/" title="NAT Gateway" class="dd-item 
+    <li data-nav-id="/1-introduce/1.5-state/" title="Terraform State" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.5-state/">
-           <b> 1.4 </b> NAT Gateway
+           <b> 1.4 </b> Terraform State
           
             <i class="fas fa-check read-icon"></i>
           
@@ -260,13 +260,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Prerequiste" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Firewall in VPC
+           <b> 2. </b> Prerequiste
           
             <i class="fas fa-check read-icon"></i>
           
@@ -319,13 +319,41 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-deloyws/" title="Network ACLs" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-ws-structure/" title="Web Server Structure" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.2-deloyws/">
-           <b> 2.2.1 </b> Network ACLs
+      <a href="/2-prerequiste/2.2-ws-structure/">
+           <b> 2.2. </b> Web Server Structure
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.3-profile/" title="Adding an AWS profile using AWS CLI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.3-profile/">
+           <b> 2.3.</b> Adding an AWS profile using AWS CLI
           
             <i class="fas fa-check read-icon"></i>
           
@@ -354,13 +382,13 @@
  
   
     
-    <li data-nav-id="/3-explantion/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/" title="Initializing Resources" class="dd-item 
         parent
         
         
         ">
       <a href="/3-explantion/">
-           <b> 2. </b> Firewall in VPC
+           <b> 3. </b> Initializing Resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -385,13 +413,13 @@
  
   
     
-    <li data-nav-id="/3-explantion/3.1-vpc/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/3.1-provider/" title="Configure connection to AWS account" class="dd-item 
         
         
         
         ">
-      <a href="/3-explantion/3.1-vpc/">
-           <b> 2. </b> Firewall in VPC
+      <a href="/3-explantion/3.1-provider/">
+           <b> 3.1.</b> Configure connection to AWS account
           
             <i class="fas fa-check read-icon"></i>
           
@@ -413,13 +441,13 @@
  
   
     
-    <li data-nav-id="/3-explantion/3.3-ec2/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/3.2-vpc/" title="Create VPC and configure connectivity " class="dd-item 
         
         
         
         ">
-      <a href="/3-explantion/3.3-ec2/">
-           <b> 2. </b> Firewall in VPC
+      <a href="/3-explantion/3.2-vpc/">
+           <b> 3.2.  </b> Create VPC and configure connectivity 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -441,13 +469,41 @@
  
   
     
-    <li data-nav-id="/3-explantion/3.3-sg-nw/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/3.4-ec2/" title="Configure EC2 instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-explantion/3.4-ec2/">
+           <b> 3.3.  </b> Configure EC2 instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-explantion/3.3-sg-nw/" title="Security Group and Network Interface" class="dd-item 
         
         active
         
         ">
       <a href="/3-explantion/3.3-sg-nw/">
-           <b> 2. </b> Firewall in VPC
+           <b> 3.3. </b> Security Group and Network Interface
           
             <i class="fas fa-check read-icon"></i>
           
@@ -476,13 +532,39 @@
  
   
     
-    <li data-nav-id="/4-cleanup/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/4-deloyws/" title="Deloy Web Server" class="dd-item 
         
         
         
         ">
-      <a href="/4-cleanup/">
-           <b> 2. </b> Firewall in VPC
+      <a href="/4-deloyws/">
+           <b> 4. </b> Deloy Web Server
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-cleanup/" title="Clean Up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-cleanup/">
+           <b> 5. </b> Clean Up
           
             <i class="fas fa-check read-icon"></i>
           
@@ -591,7 +673,7 @@
         <br>
         <br>
             <b> Team </b> <br>
-            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Trần Văn Phúc </a> <br>
         </i>
         </left>
 
@@ -635,7 +717,7 @@
             
           
           
-            <a href='/'>Start with Amazon VPC and AWS VPN Site-to-Site</a> > <a href='/3-explantion/'>Firewall in VPC</a> > Firewall in VPC
+            <a href='/'>Start with Amazon VPC and AWS VPN Site-to-Site</a> > <a href='/3-explantion/'>Initializing Resources</a> > Security Group and Network Interface
           
         
           
@@ -650,11 +732,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#firewall-in-vpc">Firewall in VPC</a>
+    <li>
       <ul>
-        <li><a href="#security-groups">Security Groups</a></li>
-        <li><a href="#network-acls">Network ACLs</a></li>
-        <li><a href="#contents">Contents</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -674,7 +754,7 @@
           
             <h1>
               
-              Firewall in VPC
+              Security Group and Network Interface
             </h1>
           
 
@@ -682,19 +762,101 @@
 
 
 
-	<h2 id="firewall-in-vpc">Firewall in VPC</h2>
-<p>In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.</p>
-<h3 id="security-groups">Security Groups</h3>
-<p>A <strong>Security Group</strong> acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It&rsquo;s important to note that Security Groups operate at the Instance layer and not at the Subnet layer.</p>
-<blockquote>
-<p><strong>Note:</strong> Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.</p>
-</blockquote>
-<h3 id="network-acls">Network ACLs</h3>
-<p>A <strong>Network Access Control List (ACL)</strong> is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.</p>
-<h3 id="contents">Contents</h3>
+	<h4 id="create-security-group-và-network-interface">Create Security Group và Network Interface</h4>
+<p>Create <strong>Security Group</strong></p>
+<pre tabindex="0"><code>resource &#34;aws_security_group&#34; &#34;allow_web&#34; {
+  name        = &#34;allow_web_traffic&#34;
+  description = &#34;Allow Web inbound traffic&#34;
+  vpc_id      = aws_vpc.prod-vpc.id
+
+  ingress {
+    description = &#34;HTTPS&#34;
+    from_port   = 443
+    to_port     = 443
+    protocol    = &#34;tcp&#34;
+    cidr_blocks = [&#34;0.0.0.0/0&#34;]
+  }
+  ingress {
+    description = &#34;HTTP&#34;
+    from_port   = 80
+    to_port     = 80
+    protocol    = &#34;tcp&#34;
+    cidr_blocks = [&#34;0.0.0.0/0&#34;]
+  }
+  ingress {
+    description = &#34;SSH&#34;
+    from_port   = 22
+    to_port     = 22
+    protocol    = &#34;tcp&#34;
+    cidr_blocks = [&#34;0.0.0.0/0&#34;]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = &#34;-1&#34;
+    cidr_blocks = [&#34;0.0.0.0/0&#34;]
+  }
+
+  tags = {
+    Name = &#34;allow_web&#34;
+  }
+}
+</code></pre><p>The code above creates a security group named &ldquo;allow_web&rdquo; that allows web traffic (HTTPS and HTTP) and SSH to instances associated with this security group. Outbound traffic from the instances is unrestricted.</p>
 <ul>
-<li><a href="2.1-securitygroup/">Security Groups</a></li>
-<li><a href="2.2-networkacls/">Network ACLs</a></li>
+<li>
+<p><strong>resource &ldquo;aws_security_group&rdquo; &ldquo;allow_web&rdquo;</strong>: This is a declaration of a resource of type aws_security_group, where &ldquo;allow_web&rdquo; is the name you assign to this security group.
+name = &ldquo;allow_web_traffic&rdquo;: The name attribute specifies the name of the security group. In this case, the security group is named &ldquo;allow_web_traffic&rdquo;.</p>
+</li>
+<li>
+<p><strong>description = &ldquo;Allow Web inbound traffic&rdquo;</strong>: The description attribute provides a description for the security group. In this case, the description is &ldquo;Allow Web inbound traffic&rdquo;.</p>
+</li>
+<li>
+<p><strong>vpc_id = aws_vpc.prod-vpc.id</strong>: The vpc_id attribute identifies the VPC to which this security group belongs. In this case, the security group belongs to the VPC with the ID determined by referencing the aws_vpc.prod-vpc resource and accessing its id attribute.</p>
+</li>
+<li>
+<p><strong>ingress and egress</strong>: These blocks define the routing rules (inbound and outbound traffic) for the security group. In this case:</p>
+</li>
+<li>
+<p><strong>ingress</strong>: defines rules for inbound traffic. Three rules are defined here to allow HTTPS traffic (port 443), HTTP traffic (port 80), and SSH traffic (port 22) from any IP address (&ldquo;0.0.0.0/0&rdquo;).</p>
+</li>
+<li>
+<p><strong>egress</strong>: defines rules for outbound traffic. In this case, it allows all outbound traffic to any IP address (&ldquo;0.0.0.0/0&rdquo;).</p>
+</li>
+<li>
+<p><strong>tags = { Name = &ldquo;allow_web&rdquo; }:</strong> This is the tags section where labels are assigned to the security group. In this case, a single tag is assigned with the key &ldquo;Name&rdquo; and the value &ldquo;allow_web&rdquo;. Tags can be used to organize and manage resources in the AWS environment.</p>
+</li>
+</ul>
+<p>Create <strong>NetWork Interface</strong></p>
+<pre tabindex="0"><code>resource &#34;aws_network_interface&#34; &#34;web-server-nic&#34; {
+  subnet_id       = aws_subnet.subnet-1.id
+  private_ips     = [&#34;10.0.1.50&#34;]
+  security_groups = [aws_security_group.allow_web.id]
+}
+</code></pre><ul>
+<li><strong>resource &ldquo;aws_network_interface&rdquo; &ldquo;web-server-nic&rdquo;</strong>: This is a declaration of a resource of type aws_network_interface, where &ldquo;web-server-nic&rdquo; is the name you assign to this Network Interface (NIC).</li>
+<li><strong>subnet_id = aws_subnet.subnet-1.id</strong>: The subnet_id attribute identifies the subnet that the NIC will be attached to. In this case, it specifies that the NIC will be attached to the subnet with the ID determined by referencing the aws_subnet.subnet-1 resource and accessing its id attribute.</li>
+<li><strong>private_ips = [&ldquo;10.0.1.50&rdquo;]</strong>: The private_ips attribute specifies the private IP address for the NIC. In this case, the NIC will have the IP address &ldquo;10.0.1.50&rdquo; within the specified subnet.</li>
+<li><strong>security_groups = [aws_security_group.allow_web.id]</strong>: The security_groups attribute identifies the security groups that the NIC will apply. In this case, the NIC will apply the rules from the security group with the ID determined by referencing the aws_security_group.allow_web resource and accessing its id attribute. This ensures that the NIC will adhere to the traffic rules defined in this security group.</li>
+</ul>
+<p>Gán <strong>Elastic IP</strong> vào <strong>Network Interface</strong></p>
+<pre tabindex="0"><code>resource &#34;aws_eip&#34; &#34;one&#34; {
+  domain                    = &#34;vpc&#34;
+  network_interface         = aws_network_interface.web-server-nic.id
+  associate_with_private_ip = &#34;10.0.1.50&#34;
+  depends_on = [ aws_internet_gateway.gw,aws_instance.web-server-instance ]
+}
+
+output &#34;server_public_ip&#34; {
+  value = aws_eip.one.public_ip
+}
+</code></pre><p>After applying this Terraform configuration, you can access the public IP address associated with Elastic IP &ldquo;one&rdquo; using the output variable server_public_ip.</p>
+<ul>
+<li><strong>domain</strong>: Set to &ldquo;vpc&rdquo;, indicating that the EIP is intended for the VPC environment.</li>
+<li><strong>network_interface</strong>: Specifies the ID of the current Network Interface (aws_network_interface.web-server-nic.id). The EIP will be associated with this Network Interface.</li>
+<li><strong>associate_with_private_ip</strong>: Specifies the private IP address (10.0.1.50) within the VPC to which the EIP will be associated.</li>
+<li><strong>depends_on</strong>: Ensures that the EIP (aws_eip.one) is created only after the Internet Gateway (aws_internet_gateway.gw) and Instance (aws_instance.web-server-instance) are created.</li>
+<li><strong>value</strong>: References the public_ip attribute of the aws_eip.one resource. This attribute will capture the public IP address assigned to the EIP and display it in the Terminal.</li>
 </ul>
 
 
@@ -879,6 +1041,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -938,6 +1116,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -960,6 +1154,22 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -981,10 +1191,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-explantion/3.3-ec2/" title="Firewall in VPC"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-explantion/3.4-ec2/" title="Configure EC2 instance"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-cleanup/" title="Firewall in VPC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/4-deloyws/" title="Deloy Web Server" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -994,19 +1204,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711531194"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711531194"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711531194"></script>
-    <script src="/js/jquery.sticky.js?1711531194"></script>
-    <script src="/js/featherlight.min.js?1711531194"></script>
-    <script src="/js/highlight.pack.js?1711531194"></script>
+    <script src="/js/clipboard.min.js?1711829179"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711829179"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711829179"></script>
+    <script src="/js/jquery.sticky.js?1711829179"></script>
+    <script src="/js/featherlight.min.js?1711829179"></script>
+    <script src="/js/highlight.pack.js?1711829179"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711531194"></script>
-    <script src="/js/learn.js?1711531194"></script>
-    <script src="/js/hugo-learn.js?1711531194"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711829179"></script>
+    <script src="/js/learn.js?1711829179"></script>
+    <script src="/js/hugo-learn.js?1711829179"></script>
 
-    <link href="/mermaid/mermaid.css?1711531194" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711531194"></script>
+    <link href="/mermaid/mermaid.css?1711829179" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1711829179"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

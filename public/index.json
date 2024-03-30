@@ -35,18 +35,11 @@
 	"content": "Terraform Workflow The typical workflow of Terraform often includes the following steps::\nDesign: Identify the necessary resources and their relationships. Build directory structure and modules if required.. Initialization: Download and install necessary plugins for the project.. Terraform will create a directory containing the required plugins. Plan: Terraform will compare the current state with the desired state defined in the infrastructure code and display the expected changes. Deployment: Terraform will deploy the planned changes. At this point, Terraform will create, update, or delete resources as well as update the state. State Management: Terraform uses a state file to track the actual state of the infrastructure compared to the configuration code. During the deployment process, this state is updated and securely stored. Verification: After deployment, verify that the deployed resources are functioning as expected. Monitoring and Maintenance: Utilize appropriate monitoring and maintenance tools such as CloudWatch. Adjust: When configuration changes are needed, iterate through the process starting from the design phase or by modifying Terraform configuration files. Clean up: When resources are no longer needed, Terraform will delete the managed resources and update the state. "
 },
 {
-	"uri": "//localhost:1313/2-prerequiste/2.2-deloyws/",
-	"title": "Network ACLs",
-	"tags": [],
-	"description": "",
-	"content": "Network ACLs Default Network ACL: After VPC initialization, a default network ACL is available and can be modified. By default, it grants access to all IPv4 or IPv6 traffic entering or leaving the VPC. Custom Network ACL: You can create a custom network ACL and associate it with a subnet. By default, custom network ACLs deny all incoming and outgoing traffic until access permission rules are added. Subnet Association: Each subnet in the VPC must be associated with a network ACL. If not associated with a specific network ACL, the subnet automatically uses the default network ACL. Multiple Subnets: A network ACL can be associated with multiple subnets, but a subnet can only be linked to one network ACL at a time. Associating a new network ACL with a subnet removes the previous association. Rule Sequencing: Network ACLs have rules with sequence numbers. Rules are evaluated based on their sequence number, from lowest to highest, to determine traffic access for associated subnets. The maximum sequence number is 32766. Allow/Deny Traffic: Network ACLs contain both inbound and outbound rules for allowing or denying traffic. Stateless Service: Network ACLs are stateless; responses to allowed inbound traffic must adhere to outbound traffic rules, and vice versa. Network ACL Rules You can manage rules for the default network ACL or create a new one for the VPC. Changes to the network ACL\u0026rsquo;s rules automatically apply to its associated subnets.\nComponents of a network ACL rule:\nRule Number: Rules are evaluated in sequence order, starting with the lowest number. Once a rule matches traffic, it\u0026rsquo;s immediately applied even if it conflicts with higher-numbered rules. Type: Defines the traffic type (e.g., SSH). Specify traffic types or custom ranges. Protocol: Specify the protocol using standard protocol numbers. Port Range: Define the port or port range for traffic (e.g., HTTP is 80). Source: [Inbound Rule] Defines the traffic origin (CIDR range). Destination: [Outbound Rule] Specifies the traffic destination (CIDR range). Allow/Deny: Choose to Allow or Deny the specified traffic. "
-},
-{
 	"uri": "//localhost:1313/2-prerequiste/",
 	"title": "Prerequiste",
 	"tags": [],
 	"description": "",
-	"content": "Prerequiste In this article, we will proceed to install Terraform and deploy a Web Server using a Ubuntu virtual machine and apache2. You can download the project zip file here.\nContent Installing Terraform Deloy Web Server "
+	"content": "Prerequiste In this article, we will proceed to install Terraform and deploy a Web Server using a Ubuntu virtual machine and apache2. You can download the project zip file here.\nContent Installing Terraform Deloy Web Server ADD AWS Profile "
 },
 {
 	"uri": "//localhost:1313/3-explantion/3.2-sg-nw/",
@@ -61,6 +54,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Terraform Provider Terraform Provider is a software acting as a bridge between Terraform and a specific platform, such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform, etc. It allows Terraform to interact with the APIs of the targeted platform to create, manage, and update resources. Main Functions:\nResource Creation: The Terraform provider offers functions and APIs to create new resources on the specific platform. Resource Creation: The Terraform provider offers functions and APIs to create new resources on the specific platform. State Management: Tracks the state of resources, aiding Terraform in determining necessary changes.. Examples:\nAWS Provider: Enables Terraform to interact with AWS services such as EC2, S3, RDS, etc. Azure Provider: Allows Terraform to interact with Azure services such as VMs, Storage, SQL Database, etc. GCP Provider: Permits Terraform to interact with GCP services such as Compute Engine, Cloud Storage, Cloud SQL, etc. "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.2-ws-structure/",
+	"title": "Web Server Structure",
+	"tags": [],
+	"description": "",
+	"content": "Web Server Structure The structure of a web server can be divided into the following basic components:\nServer Hardware: Server: A computer that runs continuously to serve web services. Network Connectivity: To connect to the internet or an internal network. Server Software: Operating System: Typically variants of Linux (such as Ubuntu, CentOS) or Windows Server. Web Server Software: Software running on the server to handle HTTP requests. Apache, Nginx, Microsoft IIS are common examples. Ứng dụng và dữ liêu: Web Application: The source code of the website or web application, often written in languages such as HTML, CSS, JavaScript, and backend languages like PHP, Python, Ruby, or Node.js. Data: Databases are commonly used to store data for web applications, such as MySQL, PostgreSQL, MongoDB. The operation of a web server can be outlined as follows: Request Reception (Request Handling): The web server listens on a specific port (typically port 80 for HTTP or 443 for HTTPS). When an HTTP request is sent, the web server receives this request via the TCP/IP protocol. Request Processing: The web server identifies the type of request (GET, POST, PUT, DELETE) and parses the Uniform Resource Identifier (URI). Based on the URI and configuration rules, the web server determines what to do with the request (e.g., access a file, execute source code, send back a previously stored webpage) Tạo và gửi phản hồi (Response Generation): Based on the request type and content, the web server generates an HTTP response. This response could be an HTML page, a file, or a status code The response is sent back to the client via the TCP/IP protocol. Kết thúc kết nối (Connection Closure): After the response is sent, the TCP/IP connection may be closed or kept alive to support keep-alive (keeping the connection open to reduce latency in establishing new connections). Ghi log và theo dõi (Logging and Monitoring): The web server may log information about processed requests and server activity for analysis and performance monitoring purposes. "
 },
 {
 	"uri": "//localhost:1313/3-explantion/3.3-ec2/",
@@ -84,11 +84,11 @@
 	"content": "Terraform Resource In Terraform, a resource is a fundamental building block that makes up the infrastructure you manage with Terraform. It can consist of various types of resources, depending on the cloud provider you are using. They may include the following types of resources:\nVirtual Machines: EC2 instances on AWS, Azure VMs, Google Compute Engine. Networking: Includes VPC, subnet, load balancer, firewall. Storage: S3 buckets on AWS, Azure Blob Storage, Google Cloud Storage. Other Services: CloudWatch on AWS, Azure Monitor, Google Cloud Monitoring. Characteristics of Terraform Resources::\nDefined by Code: Utilizes the HashiCorp Configuration Language (HCL) to describe the desired configuration of resources. Lifecycle Management: Terraform can create, update, and delete resources automatically. Flexibility: Supports multiple cloud providers and can be used to manage on-premises infrastructure. Ease of Use: Provides simple and understandable syntax, making it easy to get started with. Syntax Usage:\nprovider \u0026#34;aws\u0026#34; {\rregion = \u0026#34;us-east-1\u0026#34;\r}\rresource \u0026#34;aws_instance\u0026#34; \u0026#34;example\u0026#34; {\rami = \u0026#34;ami-0c55b159cbfafe1f0\u0026#34; instance_type = \u0026#34;t2.micro\u0026#34; } In this example::\nprovider \u0026ldquo;aws\u0026rdquo;: specifies that we will use AWS as the service provider. resource \u0026ldquo;aws_instance\u0026rdquo; \u0026ldquo;example\u0026rdquo;: defines an EC2 resource named \u0026ldquo;example\u0026rdquo;. ami: Selects an Amazon Machine Image (AMI) to create the instance. instance_type: Selects the instance type, which here is t2.micro. There are several cloud service providers supported by Terraform. Make sure to choose the right provider for your needs.\n"
 },
 {
-	"uri": "//localhost:1313/4-cleanup/",
-	"title": "Clean Up",
+	"uri": "//localhost:1313/4-deloyws/",
+	"title": "Deloy Web Server",
 	"tags": [],
 	"description": "",
-	"content": "Clean Up To clean up the resources in the Terminal of Visual Studio Code, enter terraform destroy, then enter yes to confirm. When the terminal shows Destroyed completed, it means Terraform has finished cleaning up the resources. "
+	"content": "Deloy Web Server To run the project, after downloading the project file, unzip it anywhere you want. Then replace your access key and secret key in the provider block. Next, open the file using Visual Studio Code and press the Ctrl + Shift + ` key combination to open the Terminal. Enter terraform apply and then enter yes in the terminal to confirm the application of the configurations. . When the Terminal displays Apply completed and shows the Server_IP, it means Terraform has successfully deployed the infrastructure. Now, simply enter the IP address into any browser, and you should be able to access our Web Server. . . "
 },
 {
 	"uri": "//localhost:1313/1-introduce/1.4-module/",
@@ -103,6 +103,20 @@
 	"tags": [],
 	"description": "",
 	"content": "Terraform State Terraform State is a data set that stores information about the infrastructure resources managed by Terraform. It includes:\nName and type of each resource. Attributes of each resource. Relationships between resources. Purposes:\nTrack changes to the infrastructure. Identify resources that need to be created, updated, or deleted. Keep your infrastructure consistent with Terraform configuration. Types of Terraform State::\nLocal State: Stored in a .tfstate file in your Terraform project directory. Remote State: Stored in remote storage repositories, such as HashiCorp Vault. **An example of information for an AWS virtual machine after it has been created **:\n{\r\u0026#34;resources\u0026#34;: {\r\u0026#34;aws_instance.web_server\u0026#34;: {\r\u0026#34;type\u0026#34;: \u0026#34;aws_instance\u0026#34;,\r\u0026#34;name\u0026#34;: \u0026#34;web_server\u0026#34;,\r\u0026#34;count\u0026#34;: 1,\r\u0026#34;primary\u0026#34;: {\r\u0026#34;id\u0026#34;: \u0026#34;i-1234567890abcdef0\u0026#34;,\r\u0026#34;attributes\u0026#34;: {\r\u0026#34;ami_id\u0026#34;: \u0026#34;ami-1234567890abcdef0\u0026#34;,\r\u0026#34;instance_type\u0026#34;: \u0026#34;t2.micro\u0026#34;,\r\u0026#34;public_ip\u0026#34;: \u0026#34;123.45.67.89\u0026#34;\r}\r}\r}\r}\r} There are several Terraform tools that can help you manage Terraform state, such as Terraform State Viewer and Terraform State Diff\n"
+},
+{
+	"uri": "//localhost:1313/5-cleanup/",
+	"title": "Clean Up",
+	"tags": [],
+	"description": "",
+	"content": "Clean Up To clean up the resources in the Terminal of Visual Studio Code, enter terraform destroy, then enter yes to confirm. When the terminal shows Destroyed completed, it means Terraform has finished cleaning up the resources. "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.3-profile/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/categories/",

@@ -19,5 +19,6 @@ Trong bài viết này, bạn sẽ tìm hiểu các khái niệm cơ bản và t
 1. [Giới thiệu Terraform](1-introduce/)
 2. [Các bước chuẩn bị](2-prerequiste/) 
 3. [Khởi tạo tài nguyên](3-explanion/)
-4. [Dọn dẹp tài nguyên](4-cleanup/)
+4. [Deloy Web Server](4-deloyws/) 
+5. [Dọn dẹp tài nguyên](4-cleanup/)
 

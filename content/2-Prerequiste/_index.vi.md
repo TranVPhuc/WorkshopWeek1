@@ -12,5 +12,5 @@ pre : " <b> 2. </b> "
 
 #### Nội dung
 - [Cài đặt Terraform](2.1-terraform-install/)
-- [Deloy Web Server](2.2-deloyws/)
-
+- [Cấu trúc Web Server](2.2-ws-structure/)
+- [Cài đặt AWS CLI Profile](2.3-profile/)

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Firewall in VPC :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
+    <title>Create VPC and configure connectivity  :: Start with Amazon VPC and AWS VPN Site-to-Site.</title>
 
     
-    <link href="/css/nucleus.css?1711531181" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711531181" rel="stylesheet">
-    <link href="/css/hybrid.css?1711531181" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711531181" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711531181" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711531181" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711531181" rel="stylesheet">
-    <link href="/css/theme.css?1711531181" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711531181" rel="stylesheet">
+    <link href="/css/nucleus.css?1711825502" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711825502" rel="stylesheet">
+    <link href="/css/hybrid.css?1711825502" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711825502" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711825502" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711825502" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711825502" rel="stylesheet">
+    <link href="/css/theme.css?1711825502" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711825502" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711531181" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1711825502" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711531181"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711825502"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711531181"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711531181"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711825502"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711825502"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711531181"></script>
+<script type="text/javascript" src="/js/search.js?1711825502"></script>
 
     
   </div>
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.1-workflow/" title="Subnets" class="dd-item 
+    <li data-nav-id="/1-introduce/1.1-workflow/" title="Workflow" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.1-workflow/">
-           <b> 1.1 </b> Subnets
+           <b> 1.1 </b> Workflow
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.2-provider/" title="Route Table" class="dd-item 
+    <li data-nav-id="/1-introduce/1.2-provider/" title="Terraform Provider" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.2-provider/">
-           <b> 1.2 </b> Route Table
+           <b> 1.2 </b> Terraform Provider
           
             <i class="fas fa-check read-icon"></i>
           
@@ -169,13 +169,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.3-resource/" title="Internet Gateway" class="dd-item 
+    <li data-nav-id="/1-introduce/1.3-resource/" title="Terraform Resource" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.3-resource/">
-           <b> 1.3 </b> Internet Gateway
+           <b> 1.3 </b> Terraform Resource
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.4-module/" title="NAT Gateway" class="dd-item 
+    <li data-nav-id="/1-introduce/1.4-module/" title="Terraform Module" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.4-module/">
-           <b> 1.4 </b> NAT Gateway
+           <b> 1.4 </b> Terraform Module
           
             <i class="fas fa-check read-icon"></i>
           
@@ -225,13 +225,13 @@
  
   
     
-    <li data-nav-id="/1-introduce/1.5-state/" title="NAT Gateway" class="dd-item 
+    <li data-nav-id="/1-introduce/1.5-state/" title="Terraform State" class="dd-item 
         
         
         
         ">
       <a href="/1-introduce/1.5-state/">
-           <b> 1.4 </b> NAT Gateway
+           <b> 1.4 </b> Terraform State
           
             <i class="fas fa-check read-icon"></i>
           
@@ -260,13 +260,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Prerequiste" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Firewall in VPC
+           <b> 2. </b> Prerequiste
           
             <i class="fas fa-check read-icon"></i>
           
@@ -319,13 +319,41 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-deloyws/" title="Network ACLs" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-ws-structure/" title="Web Server Structure" class="dd-item 
         
         
         
         ">
-      <a href="/2-prerequiste/2.2-deloyws/">
-           <b> 2.2.1 </b> Network ACLs
+      <a href="/2-prerequiste/2.2-ws-structure/">
+           <b> 2. </b> Web Server Structure
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.3-profile/" title="Adding an AWS profile using AWS CLI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.3-profile/">
+           <b> 2.3.</b> Adding an AWS profile using AWS CLI
           
             <i class="fas fa-check read-icon"></i>
           
@@ -354,13 +382,13 @@
  
   
     
-    <li data-nav-id="/3-explantion/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/" title="Initializing Resources" class="dd-item 
         parent
         
         
         ">
       <a href="/3-explantion/">
-           <b> 2. </b> Firewall in VPC
+           <b> 3. </b> Initializing Resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -385,13 +413,13 @@
  
   
     
-    <li data-nav-id="/3-explantion/3.2-vpc/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/3.2-vpc/" title="Create VPC and configure connectivity " class="dd-item 
         
         active
         
         ">
       <a href="/3-explantion/3.2-vpc/">
-           <b> 2. </b> Firewall in VPC
+           <b> 3.2.  </b> Create VPC and configure connectivity 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -413,13 +441,13 @@
  
   
     
-    <li data-nav-id="/3-explantion/3.3-ec2/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/3.4-ec2/" title="Configure EC2 instance" class="dd-item 
         
         
         
         ">
-      <a href="/3-explantion/3.3-ec2/">
-           <b> 2. </b> Firewall in VPC
+      <a href="/3-explantion/3.4-ec2/">
+           <b> 3.3.  </b> Configure EC2 instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -441,13 +469,41 @@
  
   
     
-    <li data-nav-id="/3-explantion/3.3-sg-nw/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/3-explantion/3.3-sg-nw/" title="Security Group and Network Interface" class="dd-item 
         
         
         
         ">
       <a href="/3-explantion/3.3-sg-nw/">
-           <b> 2. </b> Firewall in VPC
+           <b> 3.3. </b> Security Group and Network Interface
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-explantion/3.1-provider/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-explantion/3.1-provider/">
+          
           
             <i class="fas fa-check read-icon"></i>
           
@@ -476,13 +532,39 @@
  
   
     
-    <li data-nav-id="/4-cleanup/" title="Firewall in VPC" class="dd-item 
+    <li data-nav-id="/4-deloyws/" title="Deloy Web Server" class="dd-item 
         
         
         
         ">
-      <a href="/4-cleanup/">
-           <b> 2. </b> Firewall in VPC
+      <a href="/4-deloyws/">
+           <b> 4. </b> Deloy Web Server
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-cleanup/" title="Clean Up" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-cleanup/">
+           <b> 5. </b> Clean Up
           
             <i class="fas fa-check read-icon"></i>
           
@@ -591,7 +673,7 @@
         <br>
         <br>
             <b> Team </b> <br>
-            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Trần Văn Phúc </a> <br>
         </i>
         </left>
 
@@ -635,7 +717,7 @@
             
           
           
-            <a href='/'>Start with Amazon VPC and AWS VPN Site-to-Site</a> > <a href='/3-explantion/'>Firewall in VPC</a> > Firewall in VPC
+            <a href='/'>Start with Amazon VPC and AWS VPN Site-to-Site</a> > <a href='/3-explantion/'>Initializing Resources</a> > Create VPC and configure connectivity 
           
         
           
@@ -650,11 +732,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#firewall-in-vpc">Firewall in VPC</a>
+    <li>
       <ul>
-        <li><a href="#security-groups">Security Groups</a></li>
-        <li><a href="#network-acls">Network ACLs</a></li>
-        <li><a href="#contents">Contents</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -674,7 +754,7 @@
           
             <h1>
               
-              Firewall in VPC
+              Create VPC and configure connectivity 
             </h1>
           
 
@@ -682,19 +762,99 @@
 
 
 
-	<h2 id="firewall-in-vpc">Firewall in VPC</h2>
-<p>In this section, we will learn about the basic security features in Amazon VPC, such as the Security Group firewall feature and Network Access Control Lists.</p>
-<h3 id="security-groups">Security Groups</h3>
-<p>A <strong>Security Group</strong> acts as a virtual firewall for an EC2 Instance, allowing control over network traffic. In a VPC, an Instance can be assigned up to 5 Security Groups. It&rsquo;s important to note that Security Groups operate at the Instance layer and not at the Subnet layer.</p>
-<blockquote>
-<p><strong>Note:</strong> Security Groups function at the virtual machine level, rather than the subnet level. However, each virtual machine within a subnet can be assigned to different security groups.</p>
-</blockquote>
-<h3 id="network-acls">Network ACLs</h3>
-<p>A <strong>Network Access Control List (ACL)</strong> is an optional security layer for VPCs. It acts as a firewall to manage incoming and outgoing traffic for one or more subnets. Network ACLs can be configured with the same rules as security groups, providing an additional layer of security to the VPC.</p>
-<h3 id="contents">Contents</h3>
+	<h4 id="create-vpc-and-configure-connectivity">Create VPC and configure connectivity</h4>
+<ol>
+<li>Create <strong>VPC</strong>:</li>
+</ol>
+<pre tabindex="0"><code>resource &#34;aws_vpc&#34; &#34;prod-vpc&#34; {
+  cidr_block = &#34;10.0.0.0/16&#34;
+  tags = {
+    Name = &#34;production&#34;
+  }
+}
+</code></pre><p>This code snippet defines a <strong>resource &ldquo;aws_vpc&rdquo;</strong> named &ldquo;prod-vpc&rdquo;, using the address range <strong>10.0.0.0/16</strong>, and tagged with a <strong>tag &ldquo;Name&rdquo;</strong> having the <strong>value &ldquo;production&rdquo;</strong>.</p>
 <ul>
-<li><a href="2.1-securitygroup/">Security Groups</a></li>
-<li><a href="2.2-networkacls/">Network ACLs</a></li>
+<li>
+<p><strong>resource &ldquo;aws_vpc&rdquo; &ldquo;prod-vpc&rdquo;</strong>: This is a declaration of an <strong>aws_vpc</strong> resource type, where <strong>&ldquo;prod-vpc</strong>&rdquo; is the name you assign to this resource. In Terraform, resources can be referenced by this name after they are created.</p>
+</li>
+<li>
+<p><strong>cidr_block</strong> = &ldquo;10.0.0.0/16&rdquo;: This is an important part to specify the network range of the VPC. The <strong>CIDR block</strong> is a way to define the range of IP addresses that the VPC will use. In this case, the CIDR block is <strong>&ldquo;10.0.0.0/16&rdquo;</strong>, meaning the VPC will have available IP addresses ranging from 10.0.0.0 to 10.0.255.255.</p>
+</li>
+<li>
+<p><strong>tags = { Name = &ldquo;production&rdquo; }</strong>: This is the tags section assigned to the resource. In this case, there is a single tag assigned with key &ldquo;Name&rdquo; and value &ldquo;production&rdquo;. Tags can be used to organize and manage resources in the AWS environment.</p>
+</li>
+</ul>
+<ol start="2">
+<li>Create Internet Gateway</li>
+</ol>
+<pre tabindex="0"><code>resource &#34;aws_internet_gateway&#34; &#34;gw&#34; {
+  vpc_id = aws_vpc.prod-vpc.id
+}
+</code></pre><p>This code snippet defines a resource &ldquo;aws_internet_gateway&rdquo; named &ldquo;gw&rdquo;.</p>
+<ul>
+<li><strong>resource &ldquo;aws_internet_gateway&rdquo; &ldquo;gw&rdquo;</strong>: This is a declaration of an <strong>aws_internet_gateway</strong> resource type, where <strong>&ldquo;gw&rdquo;</strong> is the name you assign to this resource. Similar to before, you can reference this resource after it is created.</li>
+<li><strong>vpc_id = aws_vpc.prod-vpc.id</strong>: The <strong>vpc_id</strong> attribute specifies the <strong>VPC</strong> to which the I<strong>G</strong>W will be attached. In this case, the IGW will be attached to the <strong>VPC</strong> identified by referencing the <strong>aws_vpc.prod-vpc</strong> resource and accessing its id attribute. This ensures that the <strong>IGW</strong> will be attached to the previously created <strong>VPC</strong> named &ldquo;prod-vpc&rdquo;.</li>
+</ul>
+<ol start="3">
+<li>Create Route Table</li>
+</ol>
+<pre tabindex="0"><code>resource &#34;aws_route_table&#34; &#34;prod-route-table&#34; {
+  vpc_id = aws_vpc.prod-vpc.id
+
+  route {
+    cidr_block = &#34;0.0.0.0/0&#34;
+    gateway_id = aws_internet_gateway.gw.id
+  }
+
+  route {
+    ipv6_cidr_block = &#34;::/0&#34;
+    gateway_id      = aws_internet_gateway.gw.id
+  }
+
+  tags = {
+    Name = &#34;Prod&#34;
+  }
+}
+</code></pre><p>The code snippet creates a route table on AWS and configures routes for the previously created VPC, allowing resources within the VPC to access the Internet.</p>
+<ul>
+<li><strong>resource &ldquo;aws_route_table&rdquo; &ldquo;prod-route-table&rdquo;</strong>: This is a declaration of an <strong>aws_route_table resource</strong> type, where <strong>&ldquo;prod-route-table&rdquo;</strong> is the name you assign to this resource.</li>
+<li>vpc_id = aws_vpc.prod-vpc.id: The vpc_id attribute identifies the <strong>VPC</strong> to which the route table will be applied. In this case, this <strong>Route Table</strong> is applied to the <strong>VPC</strong> with the ID identified by referencing the <strong>aws_vpc.prod-vpc</strong> resource and accessing its id attribute.</li>
+<li>route { cidr_block = &ldquo;0.0.0.0/0&rdquo; gateway_id = aws_internet_gateway.gw.id }: This configures routes for IPv4 addresses. This route will forward all packets destined for any IP address (CIDR block is &ldquo;0.0.0.0/0&rdquo;) to the previously created Internet Gateway. This allows resources within the VPC to access the Internet.</li>
+<li><strong>route { ipv6_cidr_block = &ldquo;::/0&rdquo; gateway_id = aws_internet_gateway.gw.id }</strong>: This configures routes for <strong>IPv6</strong> addresses. Similar to the <strong>IPv4</strong> route, this route will also forward all IPv6 packets destined for any IP address (CIDR block is &ldquo;::/0&rdquo;) to the previously created Internet Gateway.llows resources within the VPC to access the Internet.</li>
+<li>t<strong>ags = { Name = &ldquo;Prod&rdquo; }</strong>: This is the tags section assigned to the route table. In this case, there is a single tag assigned with key &ldquo;Name&rdquo; and value &ldquo;Prod&rdquo;.</li>
+</ul>
+<ol start="3">
+<li>Khởi tạo subnet</li>
+</ol>
+<pre tabindex="0"><code>resource &#34;aws_subnet&#34; &#34;subnet-1&#34; {
+  vpc_id            = aws_vpc.prod-vpc.id
+  cidr_block        = &#34;10.0.1.0/24&#34;
+  availability_zone = &#34;us-east-1a&#34;
+
+  tags = {
+    Name = &#34;prod-subnet&#34;
+  }
+}
+</code></pre><p>The code snippet defines a subnet within the previously created VPC. When this code is executed, it will create a subnet within the previously created VPC, with the IP address range &ldquo;10.0.1.0/24&rdquo; and placed in the &ldquo;us-east-1a&rdquo; region.</p>
+<ul>
+<li><strong>resource &ldquo;aws_subnet&rdquo; &ldquo;subnet-1&rdquo;</strong>: This is a declaration of an aws_subnet resource type, where subnet-1 is the name you assign to this subnet.</li>
+<li><strong>vpc_id = aws_vpc.prod-vpc.id</strong>: The vpc_id attribute specifies the ID of the VPC to which the subnet will belong. In this case, it is specifying that the subnet will belong to the VPC with the ID identified by referencing the aws_vpc.prod-vpc resource and accessing its id attribute.</li>
+<li><strong>cidr_block = &ldquo;10.0.1.0/24&rdquo;</strong>: The cidr_block attribute defines the IP address range of the subnet. In this case, the subnet will have a range from 10.0.1.0 to 10.0.1.255, with 256 available IP addresses.</li>
+<li><strong>availability_zone = &ldquo;us-east-1a</strong>&rdquo;: The availability_zone attribute specifies the region where the subnet will be created. In this case, the subnet will be created in the &ldquo;us-east-1a&rdquo; region.</li>
+<li><strong>tags = { Name = &ldquo;prod-subnet&rdquo; }</strong>: This is the tags section assigned to the subnet. In this case, there is a single tag assigned with key &ldquo;Name&rdquo; and value &ldquo;prod-subnet&rdquo;. Tags can be used to organize and manage resources in the AWS environment.</li>
+</ul>
+<ol start="4">
+<li>Linking the subnet with the route table</li>
+</ol>
+<pre tabindex="0"><code>resource &#34;aws_route_table_association&#34; &#34;a&#34; {
+  subnet_id      = aws_subnet.subnet-1.id
+  route_table_id = aws_route_table.prod-route-table.id
+}
+</code></pre><p>This code snippet associates the subnet &ldquo;subnet-1&rdquo; with the route table &ldquo;prod-route-table&rdquo;. This way, instances launched in the subnet &ldquo;subnet-1&rdquo; will use the routes declared in the &ldquo;prod-route-table&rdquo; to route traffic between the VPC and the internet gateway.</p>
+<ul>
+<li><strong>resource &ldquo;aws_route_table_association&rdquo; &ldquo;a&rdquo;</strong>: This is a declaration of a resource of type aws_route_table_association, where &ldquo;a&rdquo; is the name you assign to this resource.</li>
+<li><strong>subnet_id = aws_subnet.subnet-1.id:</strong> The subnet_id attribute specifies the subnet to which this association will apply. In this case, it is specifying that this association applies to the subnet with the ID identified by referencing the aws_subnet.subnet-1 resource and accessing its id attribute.</li>
+<li><strong>route_table_id = aws_route_table.prod-route-table.id</strong>: The route_table_id attribute identifies the Route Table to which this association will apply. In this case, it is specifying that this association will apply to the Route Table with the ID identified by referencing the aws_route_table.prod-route-table resource and accessing its id attribute.</li>
 </ul>
 
 
@@ -879,6 +1039,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -949,6 +1125,38 @@
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -978,10 +1186,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-explantion/" title="Firewall in VPC"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-explantion/" title="Initializing Resources"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-explantion/3.3-ec2/" title="Firewall in VPC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-explantion/3.4-ec2/" title="Configure EC2 instance" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -991,19 +1199,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711531181"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711531181"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711531181"></script>
-    <script src="/js/jquery.sticky.js?1711531181"></script>
-    <script src="/js/featherlight.min.js?1711531181"></script>
-    <script src="/js/highlight.pack.js?1711531181"></script>
+    <script src="/js/clipboard.min.js?1711825502"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711825502"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711825502"></script>
+    <script src="/js/jquery.sticky.js?1711825502"></script>
+    <script src="/js/featherlight.min.js?1711825502"></script>
+    <script src="/js/highlight.pack.js?1711825502"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711531181"></script>
-    <script src="/js/learn.js?1711531181"></script>
-    <script src="/js/hugo-learn.js?1711531181"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711825502"></script>
+    <script src="/js/learn.js?1711825502"></script>
+    <script src="/js/hugo-learn.js?1711825502"></script>
 
-    <link href="/mermaid/mermaid.css?1711531181" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711531181"></script>
+    <link href="/mermaid/mermaid.css?1711825502" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1711825502"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
