@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.prod-vpc.id
 }
 ```
-Đoạn mã này tạo một **Internet Gateway (IGW)** trên AWS và gắn nó với **VPC** đã được tạo trước đó trong đoạn mã trước
+Đoạn mã này tạo một **Internet Gateway (IGW)** trên AWS và gắn nó với **VPC** đã được tạo trước đó trong đoạn mã trước.
 * **resource "aws_internet_gateway" "gw"**: Đây là khai báo một tài nguyên loại **aws_internet_gateway**, nơi "gw" là tên mà bạn gán cho tài nguyên này. Tương tự như trước, bạn có thể tham chiếu tài nguyên này sau khi nó được tạo.
 * **vpc_id = aws_vpc.prod-vpc.id**: Thuộc tính **vpc_id** chỉ định **VPC** mà **IGW** sẽ được gắn vào. Trong trường hợp này, **IGW** sẽ được gắn vào **VPC** có ID được xác định bằng cách tham chiếu đến tài nguyên **aws_vpc.prod-vpc** và truy cập thuộc tính **id** của nó. Điều này đảm bảo rằng **IGW** sẽ được gắn vào **VPC** đã được tạo trước với tên là **"prod-vpc"**.
 
@@ -72,7 +72,7 @@ resource "aws_subnet" "subnet-1" {
   }
 }
 ```
-Đoạn mã trên định nghĩa một **subnet** trong **VPC** đã được tạo trước đó. Khi mã này được thực thi, nó sẽ tạo ra một sub**net trong **VPC** đã được tạo trước đó, với phạm vi địa chỉ IP là "10.0.1.0/24" và được đặt trong khu vực "us-east-1a".
+Đoạn code này tạo ra một **subnet** với các thông số nhất định, bao gồm VPC, phạm vi địa chỉ IP, khu vực phân phối và các thẻ trên dịch vụ điện toán đám mây của Amazon Web Services (AWS).
 * **resource "aws_subnet" "subnet-1"**: Đây là khai báo một tài nguyên loại **aws_subnet**, nơi **subnet-1** là tên mà bạn gán cho **subnet** này.
 * **vpc_id = aws_vpc.prod-vpc.id**: Thuộc tính *vpc_id* chỉ định **ID** của **VPC** mà subnet sẽ thuộc về. Trong trường hợp này, nó đang chỉ định rằng subn**et sẽ thuộc về **VPC** có **ID** được xác định bằng cách tham chiếu đến tài nguyên **aws_vpc.prod-vpc** và truy cập thuộc tính id của nó.
 * **cidr_block = "10.0.1.0/24"**: Thuộc tính **cidr_block** xác định phạm vi địa chỉ **IP** của **subnet**. Trong trường hợp này, **subnet** sẽ có phạm vi từ 10.0.1.0 đến 10.0.1.255, với 256 địa chỉ IP khả dụng.
@@ -86,7 +86,8 @@ resource "aws_route_table_association" "a" {
   route_table_id = aws_route_table.prod-route-table.id
 }
 ```
-Đoạn mã trên định nghĩa một liên kết giữa một subnet và một bảng định tuyến trong môi trường AWS.
+
+The code above defines an association between a **subnet** and a **route table** in the AWS environment.
 
 * **resource "aws_route_table_association" "a"**: Đây là khai báo một tài nguyên của loại aws_route_table_association, nơi "a" là tên mà bạn gán cho tài nguyên này.
 

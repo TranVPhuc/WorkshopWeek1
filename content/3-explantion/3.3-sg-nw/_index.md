@@ -48,7 +48,8 @@ resource "aws_security_group" "allow_web" {
   }
 }
 ```
-The code above creates a security group named "allow_web" that allows web traffic (HTTPS and HTTP) and SSH to instances associated with this security group. Outbound traffic from the instances is unrestricted.
+
+The code snippet above defines a **Security Group** on **AWS**, allowing web traffic in and out of the designated servers within the specified **VPC**.
 
 * **resource "aws_security_group" "allow_web"**: This is a declaration of a resource of type aws_security_group, where "allow_web" is the name you assign to this security group.
 name = "allow_web_traffic": The name attribute specifies the name of the security group. In this case, the security group is named "allow_web_traffic".
@@ -74,13 +75,13 @@ resource "aws_network_interface" "web-server-nic" {
   security_groups = [aws_security_group.allow_web.id]
 }
 ```
-
+This code creates a **network interface** within a specified **subnet**, assigns it a private IP address, and associates it with a **Security Group**.
 * **resource "aws_network_interface" "web-server-nic"**: This is a declaration of a resource of type aws_network_interface, where "web-server-nic" is the name you assign to this Network Interface (NIC).
 * **subnet_id = aws_subnet.subnet-1.id**: The subnet_id attribute identifies the subnet that the NIC will be attached to. In this case, it specifies that the NIC will be attached to the subnet with the ID determined by referencing the aws_subnet.subnet-1 resource and accessing its id attribute.
 * **private_ips = ["10.0.1.50"]**: The private_ips attribute specifies the private IP address for the NIC. In this case, the NIC will have the IP address "10.0.1.50" within the specified subnet.
 * **security_groups = [aws_security_group.allow_web.id]**: The security_groups attribute identifies the security groups that the NIC will apply. In this case, the NIC will apply the rules from the security group with the ID determined by referencing the aws_security_group.allow_web resource and accessing its id attribute. This ensures that the NIC will adhere to the traffic rules defined in this security group.
 
-Gán **Elastic IP** vào **Network Interface**
+Assign an **Elastic IP** to the **Network Interface**.
 ```
 resource "aws_eip" "one" {
   domain                    = "vpc"

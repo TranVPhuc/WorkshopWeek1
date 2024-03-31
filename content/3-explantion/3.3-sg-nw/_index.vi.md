@@ -66,8 +66,7 @@ resource "aws_network_interface" "web-server-nic" {
   security_groups = [aws_security_group.allow_web.id]
 }
 ```
-
-Đoạn mã trên định nghĩa một **giao diện mạng** trên AWS, cụ thể là một **NIC (Network Interface Controller)** được gắn với một máy chủ web.
+Đoạn mã này tạo ra một Network Interace trong một subnet cụ thể, gán cho nó một địa chỉ IP riêng, và liên kết với một Security Group.
 * **resource "aws_network_interface" "web-server-nic"**: Đây là khai báo một tài nguyên của loại aws_network_interface, nơi "web-server-nic" là tên mà bạn gán cho NIC này.
 * **subnet_id = aws_subnet.subnet-1.id**: Thuộc tính subnet_id xác định subnet mà NIC sẽ được gắn vào. Trong trường hợp này, nó đang chỉ định rằng NIC sẽ được gắn vào subnet có ID được xác định bằng cách tham chiếu đến tài nguyên aws_subnet.subnet-1 và truy cập thuộc tính id của nó.
 
@@ -88,7 +87,7 @@ output "server_public_ip" {
   value = aws_eip.one.public_ip
 }
 ```
-Sau khi áp dụng cấu hình Terraform này, bạn có thể truy xuất địa chỉ IP công cộng liên kết với Elastic IP "one" bằng cách sử dụng biến đầu ra server_public_ip.
+Đoạn mã trên được sử dụng để tạo một địa chỉ **IP động (Elastic IP)** trên **Amazon Web Services (AWS)** và gán nó vào một **Network Interface** trong một môi trường **VPC (Virtual Private Cloud).**
 * **domain**: Được đặt thành "vpc", cho biết EIP dành cho môi trường VPC.
 * **network_interface**: Thấm chiếm ID của **Network Interface** hiện có (aws_network_interface.web-server-nic.id). EIP sẽ được liên kết với **Network Interface** này.
 * **associate_with_private_ip**: Chỉ định **private IP** (10.0.1.50) trong VPC mà EIP sẽ liên kết đến. 
