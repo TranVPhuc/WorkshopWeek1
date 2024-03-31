@@ -8,7 +8,7 @@ pre : " <b> 4. </b> "
 
 ## Deloy Web Server
 
-- To run the project, after downloading the project file, unzip it anywhere you want.
+- To run the project, after downloading the file, unzip it anywhere you want.
 - Next, open the file using Visual Studio Code and press the Ctrl + Shift + ` key combination to open the Terminal.
 - Enter terraform apply and then enter yes in the terminal to confirm the application of the configurations.
 ![initiate](/images/deloyws/00001.png?featherlight=false&width=75pc).
