@@ -8,7 +8,7 @@ pre : " <b> 4. </b> "
 
 #### Deloy Web Server
 
-- Để chạy dự án, sau khi tải xuống tệp dự án, giải nén nó ở bất kỳ nơi nào bạn muốn. Sau đó, thay thế giá trị "Access Key" và "Secret key" của bạn trong khối nhà cung cấp.
+- Để chạy dự án, sau khi tải xuống tệp dự án, giải nén nó ở bất kỳ nơi nào bạn muốn.
 - Tiếp theo, mở tệp bằng Visual Studio Code và nhấn tổ hợp phím **Ctrl** + **Shift** + **`** để mở **Terminal**.
 - Nhập lệnh terraform apply và sau đó nhập yes trong terminal để xác nhận việc áp dụng cấu hình.
 ![initiate](/images/deloyws/00001.png?featherlight=false&width=75pc).
